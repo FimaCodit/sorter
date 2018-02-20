@@ -1,7 +1,6 @@
 class Sorter {
   constructor() {
     this.arr = [];
-    this.temp = [];
   }
 
   add(element) {
@@ -21,14 +20,16 @@ class Sorter {
   }
 
   sort(indices) {
+   
+    let temp = [];    
     for (let i = 0; i < indices.length; i++) {
-      this.temp.push(this.arr[indices[i]]);
+      temp.push(this.arr[indices[i]]);
     }
-    this.temp.sort(function(a,b){
+    temp.sort(function(a,b){
       return a - b;
     })
     for (let i = 0; i < indices.length; i++) {
-      this.arr[indices[i]] = this.temp[i];
+      this.arr[indices[i]] = temp[i];
     }  
   }
 
